@@ -2,7 +2,7 @@
   "name": "burger-eater",
   "version": "1.0.0",
   "description": "### Requirements: * [VirtualBox](https://www.virtualbox.org/wiki/Downloads) * [Vagrant](https://www.vagrantup.com/downloads.html)",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
