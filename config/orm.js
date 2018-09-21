@@ -11,14 +11,14 @@ function sqlObjects(object) {
 }
 
 var orm = {
-    all: function (tableInput, _cb) {
+    all: (tableInput, _cb) => {
         var queryString = 'SELECT * FROM ' + tableInput + ';';
-        connection.query(queryString, function (err, result){
+        connection.query(queryString, (err, result) => {
             if (err) throw err;
             _cb(result);
         });
     },
-    insertOne: function (table, col, val, _cb) {
+    insertOne: (table, col, val, _cb) => {
         var queryString = 'INSERT INTO ' + table;
 
         queryString += ' (';
@@ -28,13 +28,13 @@ var orm = {
         queryString += '?';
         queryString += ') ';
 
-        connection.query(queryString, val, function (err,result) { 
+        connection.query(queryString, val, (err,result) => { 
             if (err) throw err;
             _cb(result);
 
         });
     },
-        update: function (table, objColVal, condition, _cb) {
+        update: (table, objColVal, condition, _cb) => {
             var queryString = 'UPDATE ' + table;
 
         queryString += ' SET ';
@@ -42,7 +42,7 @@ var orm = {
         queryString += ' WHERE ';
         queryString += condition;
 
-        connection.query(queryString, function (err, result) {
+        connection.query(queryString, (err, result) => {
             if (err) throw err;
             _cb(result);
         });
