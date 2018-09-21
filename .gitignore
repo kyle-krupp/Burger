@@ -63,7 +63,8 @@ typings/
 # next.js build output
 .next
 
-.DSstore
+.gitignore
+.DS_Store
 
 .gitignore
 node_modules
