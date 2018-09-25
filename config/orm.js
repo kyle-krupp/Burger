@@ -1,9 +1,9 @@
 var connection = require("../config/connection.js");
 
-function sqlObjects(object) {
+function sqlObjects(ob) {
     var emptyArray = [];
 
-    for (var key in object) {
+    for (var key in ob) {
         if (oject.hasOwnProperty(key)){
             return key + '=' + object[key];
         }

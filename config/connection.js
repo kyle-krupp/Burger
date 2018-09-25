@@ -11,7 +11,7 @@ connection = mysql.createConnection({
     port: 8080,
     host: "127.0.0.1",
     user: "root",
-    password: "SuperSecretPasswordHere",
+    password: "",
     database: "burgers_db"
 });
 };
