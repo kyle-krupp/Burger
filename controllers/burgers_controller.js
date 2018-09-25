@@ -1,40 +1,38 @@
-// require express NPM package
 var express = require("express");
-
-
-
-// create router for the app
 
 var router = express.Router();
 
-// import burger.js file
+// Import the model (burger.js) to use its database functions.
 var burger = require("../models/burger.js");
 
-router.get("/", (req,res) => {
+// Create all our routes and set up logic within those routes where required.
+router.get("/", function(req,res){
+  res.redirect("/burgers");
+});
+
+router.get("/burgers", function(req, res) {
+  burger.all(function(data) {
+    var hbsObject = { burgers: data };
+    res.render("index", hbsObject);
+
+  });
+});
+
+router.post("/burgers/add", function(req, res) {
+  burger.insertOne("burger_name",  req.body.burger_name, function(){
     res.redirect("/burgers");
+  });
 });
-  
-router.get("/burgers", (req,res) => {
-    burger.all((data) => {
-        var burgerObject = { burgers:data };
-        res.render("index",burgerObject);
-    });
-});
+    
 
-router.post("/burgers/add", (req,res) => {
-    burger.insertOne("burger_name", req.body.burger_name, () => {
-        res,redirect("/burgers");
-    });
-});
-
-router.put("/burgers/devour/:id", (req,res) => {
-    var condition = "id = " + req.params.id;
-    burger.update({ devoured: req.body.devoured },condition, () => {
-        res.redirect("/burgers");
-    });
+router.put("/burgers/devour/:id", function(req, res) {
+  var condition = "id = " + req.params.id;
+  burger.update({ devoured: req.body.devoured }, condition, function(){
+    res.redirect("/burgers");
+  });
 });
 
 
 
-// export burgers_controller.js file
+// Export routes for server.js to use.
 module.exports = router;
