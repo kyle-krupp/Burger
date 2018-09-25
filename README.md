@@ -15,7 +15,7 @@ Live link: [Eat the Burger!](https://infinite-atoll-57012.herokuapp.com/burgers)
 - [ ] express NPM Package - https://www.npmjs.com/package/express
 - [ ] mysql NPM Package - https://www.npmjs.com/package/mysql
 - [ ] handlebars NPM Package - https://www.npmjs.com/package/handlebars
-- [ ] express-handlbars NPM Package - https://www.npmjs.com/package/express-handlebars
+- [ ] express-handlebars NPM Package - https://www.npmjs.com/package/express-handlebars
 
 
 # Instructions for running your own version of this application
@@ -24,7 +24,7 @@ Live link: [Eat the Burger!](https://infinite-atoll-57012.herokuapp.com/burgers)
 - [ ] Create an Heroku account if you do not have one
 - [ ] Login to Heroku in the command line with 
 `heroku login`
-- [ ] Login into your account at heroku.com and add the JawsDB MySQL resource
+- [ ] Login to your account at heroku.com and add the JawsDB MySQL resource
 ![](Screen%20Shot%202018-09-25%20at%202.38.39%20PM.png)
 - [ ] Once you’ve added Jaws DB MySQL  click the hyperlink to bring you to your DB information
 - [ ] Use this DB information to insert the Host, Username, and Password credentials into a MySQL client (MySQL Pro, MySQL Server, etc.)
