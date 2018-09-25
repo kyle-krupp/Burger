@@ -2,25 +2,25 @@ var orm = require("../config/orm.js");
 
 
 var burger = {
-  all: function(cb) {
+  all: function(_cb) {
     orm.all("burgers", function(res) {
-      cb(res);
+      _cb(res);
     });
   },
   // The variables cols and vals are arrays.
-  insertOne: function(col, val, cb) {
+  insertOne: function(col, val, _cb) {
     orm.insertOne("burgers", col, val, function(res) {
-      cb(res);
+      _cb(res);
     });
   },
-  update: function(objColVal, condition, cb) {
+  update: function(objColVal, condition, _cb) {
     orm.update("burgers", objColVal, condition, function(res) {
-      cb(res);
+      _cb(res);
     });
   },
-  delete: function(conditionVal, cb){
+  delete: function(conditionVal, _cb){
     orm.delete("burgers", "id", conditionsVal, function(res){
-      cb(res);
+      _cb(res);
     });
   }
 };
